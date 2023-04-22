@@ -1,7 +1,6 @@
 "use client";
 import {
   Box,
-  Icon,
   Flex,
   Spacer,
   Image,
@@ -9,15 +8,22 @@ import {
   useBreakpointValue,
   Accordion,
   AccordionItem,
-  AccordionIcon,
   AccordionButton,
   AccordionPanel,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const isSmall = useBreakpointValue({ base: true, sm: true, md: false });
-  const isLarge = useBreakpointValue({ md: true, lg: false });
+  const isLarge = useBreakpointValue({
+    sm: true,
+    base: true,
+    md: true,
+    lg: false,
+  });
   const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
@@ -65,7 +71,7 @@ export default function Navbar() {
           </Box>
         </Flex>
       </Box>
-      <Box position={!isLarge && showNav ? "sticky" : "flex"} top="0">
+      <Box position={!isLarge && showNav ? "sticky" : "relative"} top="0">
         <Flex
           flexDirection={{
             base: "column",
@@ -75,7 +81,7 @@ export default function Navbar() {
           }}
           display="inline-flex"
           bg="ame.200"
-          w="100vw"
+          w="100%"
           px={{
             base: ".44rem",
             sm: ".67rem",
@@ -89,7 +95,7 @@ export default function Navbar() {
           fontWeight="900 !important"
           css={{ fontSize: "inherit" }}
           fontSize="13px !important"
-          pb={isSmall ? "12px" : "0px"}
+          pb={!isSmall ? "12px" : "0px"}
         >
           <Box>
             <Image
@@ -127,8 +133,36 @@ export default function Navbar() {
                   MENU
                 </AccordionButton>
                 <AccordionPanel p="0" bg="ame.200">
-                  <AccordionPanel className="menuItem">
-                    <a href="">ABOUT US</a>
+                  <AccordionPanel p="0" bg="ame.200">
+                    <Accordion allowToggle>
+                      <AccordionItem>
+                        {({ isExpanded }) => (
+                          <>
+                            <AccordionButton
+                              as={isExpanded ? "a" : Box}
+                              justifyContent="left"
+                              textAlign="left"
+                              className="menuItem"
+                              fontSize="13px"
+                              href=""
+                            >
+                              ABOUT US
+                            </AccordionButton>
+                            <AccordionPanel p="0 0 0 .5rem">
+                              <AccordionPanel className="menuItem">
+                                <a href="">CARRERS</a>
+                              </AccordionPanel>
+                              <AccordionPanel className="menuItem">
+                                <a href="">IT SUPPORT</a>
+                              </AccordionPanel>
+                              <AccordionPanel className="menuItem">
+                                <a href="">DOWNLOADABLE RESOURCES</a>
+                              </AccordionPanel>
+                            </AccordionPanel>
+                          </>
+                        )}
+                      </AccordionItem>
+                    </Accordion>{" "}
                   </AccordionPanel>
                   <AccordionPanel className="menuItem">
                     <a href="">SERVICES</a>
@@ -154,7 +188,29 @@ export default function Navbar() {
           ) : (
             <HStack spacing="0">
               <Box p="15px" pl="15px">
-                <a href="">ABOUT US</a>
+                <Popover placement="bottom-start" trigger="hover">
+                  <PopoverTrigger>
+                    <a href="">ABOUT US</a>
+                  </PopoverTrigger>
+                  <PopoverContent
+                    bg="ame.200"
+                    rounded="0"
+                    borderTopColor="ame.300"
+                    borderTopWidth="2px"
+                    w="auto"
+                    px="15px"
+                  >
+                    <Box as="a" href="" py="10px !important">
+                      CARRERS
+                    </Box>
+                    <Box as="a" href="" py="10px !important">
+                      IT SUPPORT
+                    </Box>
+                    <Box as="a" href="" py="10px !important">
+                      DOWNLOADABLE RESOURCES
+                    </Box>
+                  </PopoverContent>
+                </Popover>{" "}
               </Box>
               <Box p="15px">
                 <a href="">SERVICES</a>
