@@ -71,7 +71,11 @@ export default function Navbar() {
           </Box>
         </Flex>
       </Box>
-      <Box position={!isLarge && showNav ? "sticky" : "relative"} top="0">
+      <Box
+        position={!isLarge && showNav ? "sticky" : "relative"}
+        top="0"
+        zIndex={5}
+      >
         <Flex
           flexDirection={{
             base: "column",
@@ -95,7 +99,7 @@ export default function Navbar() {
           fontWeight="900 !important"
           css={{ fontSize: "inherit" }}
           fontSize="13px !important"
-          pb={!isSmall ? "12px" : "0px"}
+          pb={isSmall ? "12px" : "0px"}
         >
           <Box>
             <Image
