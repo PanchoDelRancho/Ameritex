@@ -1,1 +1,6 @@
-Hello my name is Francisco, I worked at Ameritex last year before leaving to learn web development. I really enjoyed working with your company and was hoping that I could continue working with you, but this time as a web developer.So I took it upon myself to show you proof of what I am capable of. This is a demo website I built using Next Js and a few other libraries and its built to function look and function like your website. You can find the demo here --link and the git repo her --link. Anyways i hope i didn't cross any boundaries by using your assets and I will shutdown the demo as soon as you have had a chance to see it. Thank you for you time.
+Hey I'm Francisco, I worked with you company as a machine operator before leaving to learn web development. Here is a demo to show you what I am capable of, I hope you enjoy and I hope you can reach out so we can talk, thanks for you time and attention.
+
+The demo was made using JavaScript, Next.js, Chakra-ui and is hosted on Vercel.
+
+Link to live demo --
+Link to my LinkedIn --
