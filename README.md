@@ -2,6 +2,6 @@ Hey I'm Francisco, I worked with you company as a machine operator before leavin
 
 The demo was made using JavaScript, Next.js, Chakra-ui and is hosted on Vercel.
 
-Link to live demo --
+Link to live demo -- https://ameritex.vercel.app/
 
 Link to my LinkedIn -- https://www.linkedin.com/in/francisco-a-78ba8811a/
