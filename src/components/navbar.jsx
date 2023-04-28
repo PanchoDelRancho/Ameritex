@@ -14,7 +14,9 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from "@chakra-ui/react";
+import { FiMapPin, FiLinkedin, FiFacebook, FiYoutube } from "react-icons/fi";
 import { useState, useEffect } from "react";
+import { IoCallOutline } from "react-icons/io5";
 
 export default function Navbar() {
   const isSmall = useBreakpointValue({ base: true, sm: true, md: false });
@@ -63,18 +65,34 @@ export default function Navbar() {
           fontWeight="bold"
         >
           <Box fontSize="14px">
-            <a href="">(936)-228-5070</a>
+            <HStack>
+              <a href="" className="dark">
+                <IoCallOutline size="16px" />
+              </a>
+              <a href="" className="dark">
+                (936)-228-5070
+              </a>
+            </HStack>
           </Box>
           <Spacer />
-          <Box>
-            <a href="">icons</a>
-          </Box>
+          <HStack>
+            <a href="" className="dark">
+              <FiFacebook size="16px" />
+            </a>
+            <a href="" className="dark">
+              <FiLinkedin size="16px" />
+            </a>
+            <a href="" className="dark">
+              <FiYoutube size="16px" />
+            </a>
+          </HStack>
         </Flex>
       </Box>
       <Box
         position={!isLarge && showNav ? "sticky" : "relative"}
         top="0"
         zIndex={5}
+        mb={{ lg: "-6px" }}
       >
         <Flex
           flexDirection={{
