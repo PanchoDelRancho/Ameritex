@@ -9,11 +9,6 @@ import theme from "./theme";
 
 import "./globals.css";
 
-export const metadata = {
-  title: "Ameritex Demo",
-  description: "Made by Francisco Inspired by Ameritex Website",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html>
