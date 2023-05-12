@@ -23,7 +23,7 @@ export default function SectionOne() {
         backdropFilter="auto"
         backdropBrightness="60%"
       >
-        <Box align="center" justify="center">
+        <Box align="center" justify="center" color="ame.200">
           <VStack>
             <Box fontSize="28px" pt="20px" m="0px">
               {" "}
